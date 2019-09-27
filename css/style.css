@@ -1,0 +1,48 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: consolas;
+}
+.type
+{
+    padding: 50px;
+    font-size: 1em;
+}
+.type .char
+{
+    visibility: hidden;
+    animation: animate 2s steps(2) forwards;
+    animation-delay: calc(0.09s * var(--char-index));
+}
+@keyframes animate{
+    0%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: visible;
+    }
+}
+/*---------------------------------------------*/
+.wave 
+{
+    font-size: 2em;
+}
+.wave .char
+{
+    animation: animat 2s ease-in-out infinite;
+    transform: translateY(-2em);
+    animation-delay: calc(0.05s * var(--char-index));
+}
+@keyframes animat{
+    0%, 100%{
+        transform: translateY(-2em) rotate(-25deg);
+    }
+    50%{
+        transform: translateY(2em) rotate(25deg);
+    }
+}
